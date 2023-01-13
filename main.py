@@ -23,8 +23,8 @@ driver.get("https://python.org/")
 #print(bug_link.text)
 
 # Get CSS selectors
-links = driver.find_elements(By.CSS_SELECTOR, ".documentation-widget a")
-print(links)
+#links = driver.find_elements(By.CSS_SELECTOR, ".documentation-widget a")
+#print(links)
 
 # get logo size
 #logo = driver.find_element(By.CLASS_NAME, "python-logo")
@@ -34,6 +34,11 @@ print(links)
 #search_bar = driver.find_element(By.NAME, "q")
 #print(search_bar.get_attribute("placeholder"))
 
+events = driver.find_elements(By.XPATH, '//*[@id="content"]/div/section/div[2]/div[2]/div/ul')
+
+#   print(type(events)) #   list
+
+dict_events = {}
 
 
 
