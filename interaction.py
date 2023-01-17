@@ -1,7 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.remote.webelement import WebElement
+import time
 
 service = Service(executable_path="D:\\Ohjelmat\\ChromeDriver\\Chromedriver.exe")
 
@@ -12,7 +14,7 @@ driver = webdriver.Chrome(service=service)
 #price = driver.find_element(By.CLASS_NAME, "a-price-whole")
 #print(price.text)
 
-driver.get("https://en.wikipedia.org/wiki/Main_Page")
+# driver.get("https://en.wikipedia.org/wiki/Main_Page")
 
 # get anchor tag
 # documentation_link = driver.find_elements(By.CSS_SELECTOR, ".documentation-widget a")
@@ -35,10 +37,30 @@ driver.get("https://en.wikipedia.org/wiki/Main_Page")
 #print(search_bar.get_attribute("placeholder"))
 
 
-number = driver.find_elements(By.XPATH, '//*[@id="articlecount"]/a[1]')
+#number = driver.find_element(By.XPATH, '//*[@id="articlecount"]/a[1]')
 # event_names = driver.find_elements(By.CSS_SELECTOR, ".event-widget li a")   # ignores the first a which is not in a li
-print(type(number))
-print(number[0].text)
+
+# #article_count = driver.find_element(By.CSS_SELECTOR, "#articlecount a")
+# #article_count.click()
+#
+# all_portals = driver.find_element(By.LINK_TEXT, "Community portal")
+# #all_portals.click()
+#
+# search = driver.find_element(By.NAME, "search")
+# search.send_keys("Python")
+# search.send_keys(Keys.ENTER)
+
+
+
+driver.get("https://secure-retreat-92358.herokuapp.com")
+
+
+
+
+
+
+
+time.sleep(2)
 
 # for time in event_times:
 #     print(time.text)
@@ -54,4 +76,4 @@ print(number[0].text)
 #
 # print(nested_dict)
 
-driver.quit()   # Closes the entire browser. driver.close() Closes a single, active tab
+#driver.quit()   # Closes the entire browser. driver.close() Closes a single, active tab
