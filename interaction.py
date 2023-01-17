@@ -12,7 +12,7 @@ driver = webdriver.Chrome(service=service)
 #price = driver.find_element(By.CLASS_NAME, "a-price-whole")
 #print(price.text)
 
-driver.get("https://python.org/")
+driver.get("https://en.wikipedia.org/wiki/Main_Page")
 
 # get anchor tag
 # documentation_link = driver.find_elements(By.CSS_SELECTOR, ".documentation-widget a")
@@ -34,16 +34,11 @@ driver.get("https://python.org/")
 #search_bar = driver.find_element(By.NAME, "q")
 #print(search_bar.get_attribute("placeholder"))
 
-event_times = driver.find_elements(By.CSS_SELECTOR, ".event-widget time")
-event_names = driver.find_elements(By.CSS_SELECTOR, ".event-widget li a")   # ignores the first a which is not in a li
-events = {}
 
-for n in range(len(event_times)):
-    events[n] = {
-        "time": event_times[n].text,
-        "name": event_names[n].text
-    }
-print(events)
+number = driver.find_elements(By.XPATH, '//*[@id="articlecount"]/a[1]')
+# event_names = driver.find_elements(By.CSS_SELECTOR, ".event-widget li a")   # ignores the first a which is not in a li
+print(type(number))
+print(number[0].text)
 
 # for time in event_times:
 #     print(time.text)
